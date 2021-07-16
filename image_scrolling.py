@@ -11,9 +11,11 @@ SIZE = width, height = 800, 600  # Resolution. (4:3)!
 BG_COLOR = (0, 0, 0)  # Background color in RGB
 fullscreen = True  # Fullscreen
 
-images = ["bella1.jpg", "bella2.jpg"]
+images = ["img1.png", "img2.jpeg", "img3.jpeg"]
+imageLength = 2
 
-image = pygame.image.load(images[0])
+currentImage = 0
+image = pygame.image.load(images[currentImage])
 
 clock = pygame.time.Clock()
 img_size = image.get_rect().size
@@ -25,10 +27,11 @@ if fullscreen:
     DISPLAYSURF = pygame.display.set_mode((1280, 2048), pygame.FULLSCREEN)
     pygame.mouse.set_visible(False)
 
-x = randint(0, width)
+# x = randint(0, width)
+x = 640 - (img_width/2)
 y = 0
 x_speed = 0
-y_speed = 5
+y_speed = 10
 
 print(img_height)
 print(img_width)
@@ -49,14 +52,25 @@ while exit == False:
     x += x_speed
     y += y_speed
     move(x, y)
+
+    # for index, i in enumerate(images):
+    #     print(i)
+    print(currentImage)
     
     
     
+#     if y > 2048:
+#         y = - img_height
+# #         image = pygame.image.load('bella2 .jpg')
+#         image = pygame.image.load(images[0 + 1])
+#         currentImage = currentImage + 1
     if y > 2048:
-        y = - img_height
-#         image = pygame.image.load('bella2 .jpg')
-        image = pgame.image.load(images[0 + 1])
+            y = - img_height
+            currentImage = currentImage + 1
+            image = pygame.image.load(images[currentImage])
+            
     
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             exit = True
