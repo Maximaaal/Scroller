@@ -1,18 +1,14 @@
-# https://github.com/Tomeczekqq/dvd-corner
-
 from random import randint
 import pygame
 import sys
 
 exit = False
 
-# Settings
-SIZE = width, height = 800, 600  # Resolution. (4:3)!
-BG_COLOR = (0, 0, 0)  # Background color in RGB
-fullscreen = True  # Fullscreen
+SIZE = width, height = 800, 600
+BG_COLOR = (0, 0, 0)
+fullscreen = True
 
-images = ["img1.png", "img2.jpeg", "img3.jpeg"]
-imageLength = 2
+images = ["img1.png", "img2.jpeg", "img3.png", "img4.png"]
 
 currentImage = 0
 image = pygame.image.load(images[currentImage])
@@ -29,9 +25,9 @@ if fullscreen:
 
 # x = randint(0, width)
 x = 640 - (img_width/2)
-y = 0
+y = 0 - img_height
 x_speed = 0
-y_speed = 10
+y_speed = 2
 
 print(img_height)
 print(img_width)
@@ -45,32 +41,27 @@ while exit == False:
     
     
     screen.fill(BG_COLOR)
-#     if (x + img_size[0] >= width) or (x <= 0):
-#         x_speed = -x_speed
-#     if (y + img_size[1] >= height) or (y <= 0):
-#         y_speed = -y_speed
+
     x += x_speed
     y += y_speed
+
     move(x, y)
+    print(y)
 
-    # for index, i in enumerate(images):
-    #     print(i)
-    print(currentImage)
-    
-    
-    
-#     if y > 2048:
-#         y = - img_height
-# #         image = pygame.image.load('bella2 .jpg')
-#         image = pygame.image.load(images[0 + 1])
-#         currentImage = currentImage + 1
+    img_size = image.get_rect().size
+    img_height = image.get_rect().height
+    img_width = image.get_rect().width
+
+    x = 640 - (img_width/2)
+
     if y > 2048:
-            y = - img_height
-            currentImage = currentImage + 1
-            image = pygame.image.load(images[currentImage])
-            
-    
+        y = 0 - img_height
+        currentImage = currentImage + 1
+        image = pygame.image.load(images[currentImage])
 
+    if currentImage >= 3:
+        currentImage = 0        
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             exit = True
@@ -80,7 +71,7 @@ while exit == False:
                 sys.exit()
                 
     pygame.display.update()
-    clock.tick(59)
+    clock.tick(60)
     
 
 pygame.quit()
