@@ -24,11 +24,6 @@ if fullscreen:
     DISPLAYSURF = pygame.display.set_mode((1280, 2048), pygame.FULLSCREEN)
     pygame.mouse.set_visible(False)
 
-movie = pygame.movie.Movie("border.mp4")
-sur_obj = pygame.display.set_mode(movie.get_size())
-mov_scre = pygame.Surface(movie.get_size()).convert()
-movie.set_display(mov_scre)
-movie.play(-1)
 
 # x = randint(0, width)
 x = 640 - (img_width/2)
@@ -76,7 +71,6 @@ while exit == False:
             exit = True
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                movie.stop()
                 pygame.quit()
                 sys.exit()
                 
