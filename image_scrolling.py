@@ -57,7 +57,7 @@ while exit == False:
 
     if y == 2048:
         # y = 0 - img_height
-        currentImage = currentImage + 1
+        currentImage = randint(0, 3)
         image = pygame.image.load(images[currentImage])
         y = (yPos[currentImage] - img_height)
         
