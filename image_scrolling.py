@@ -8,8 +8,15 @@ SIZE = width, height = 800, 600
 BG_COLOR = (0, 0, 0)
 fullscreen = True
 
-images = ["img1.png", "img2.jpeg", "img3.png", "img4.png"]
-yPos = [-454, -1798, -1126, -1220]
+images = []
+i = 0
+while len(images) < 97:
+    images.append("images/img%d.jpeg" % i)
+    i += 1
+print(images)
+
+# images = ["img1.png", "img2.jpeg", "img3.png", "img4.png"]
+# yPos = [-454, -1798, -1126, -1220]
 
 currentImage = 0
 image = pygame.image.load(images[currentImage])
@@ -24,12 +31,11 @@ if fullscreen:
     DISPLAYSURF = pygame.display.set_mode((1280, 2048), pygame.FULLSCREEN)
     pygame.mouse.set_visible(False)
 
-
 # x = randint(0, width)
 x = 640 - (img_width/2)
 y = 0 - (img_height + 500)
 x_speed = 0
-y_speed = 2
+y_speed = 1
 
 print(img_height)
 print(img_width)
@@ -56,15 +62,15 @@ while exit == False:
 
     x = 640 - (img_width/2)
 
-    if y == 2048:
+    if y > 2048:
         # y = 0 - img_height
-        currentImage = randint(0, 3)
+        currentImage = randint(0, 96)
         image = pygame.image.load(images[currentImage])
-        y = (yPos[currentImage] - img_height)
+        y = (0 - image.get_rect().height) - 100
         
 
-    if currentImage >= 3:
-        currentImage = 0        
+    # if currentImage >= 3:
+    #     currentImage = 0        
     
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
