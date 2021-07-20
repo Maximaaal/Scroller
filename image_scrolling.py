@@ -25,8 +25,6 @@ image = pygame.image.load(images[currentImage])
 border1 = pygame.image.load('border1.png')
 border2 = pygame.image.load('border2.png')
 
-flags = pygame.OPENGL
-
 clock = pygame.time.Clock()
 img_size = image.get_rect().size
 img_height = image.get_rect().height
@@ -34,7 +32,7 @@ img_width = image.get_rect().width
 screen = pygame.display.set_mode(SIZE)
 pygame.display.set_caption('Scroller')
 if fullscreen:
-    DISPLAYSURF = pygame.display.set_mode((1280, 2048), pygame.FULLSCREEN, vsync=1)
+    DISPLAYSURF = pygame.display.set_mode((1280, 2048), pygame.FULLSCREEN)
     pygame.mouse.set_visible(False)
 
 # x = randint(0, width)
