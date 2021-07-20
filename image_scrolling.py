@@ -21,7 +21,7 @@ print(images)
 
 currentImage = 0
 image = pygame.image.load(images[currentImage])
-image2 = pygame.image.load(images[randint(0, 96)])
+# image2 = pygame.image.load(images[randint(0, 96)])
 
 borderBottom = pygame.image.load('borderbottom.png')
 borderTop = pygame.image.load('bordertop.png')
@@ -66,10 +66,10 @@ print(img_width)
 
 
 def move(x, y):
-    screen.blit(borderBottom, (0, 0))
-    screen.blit(image, (x, y))
-    screen.blit(image2, (x2, y2))
     screen.blit(borderTop, (0, 0))
+    screen.blit(image, (x, y))
+    # screen.blit(image2, (x2, y2))
+    screen.blit(borderBottom, (0, 0))
     
 
 
@@ -95,8 +95,8 @@ while exit == False:
 
     x = 640 - (img_width/2)
 
-    if y >= 1200:
-        image2 = pygame.image.load(images[randint(0, 96)])
+    # if y >= 1200:
+    #     image2 = pygame.image.load(images[randint(0, 96)])
 
     if y > 2048:
         # y = 0 - img_height
