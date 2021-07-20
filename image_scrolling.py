@@ -88,8 +88,7 @@ while exit == False:
 
     x = 640 - (img_width/2)
 
-    if img_width > 700:
-        img_width = img_width - 700
+    
 
     if y > 2048:
         # y = 0 - img_height
@@ -97,7 +96,8 @@ while exit == False:
         image = pygame.image.load(images[currentImage])
         y = (0 - image.get_rect().height) - 100
         
-
+    if img_width > 700:
+        img_width = img_width - 700
     # if currentImage >= 3:
     #     currentImage = 0        
     
