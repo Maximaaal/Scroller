@@ -42,6 +42,11 @@ y = 0 - (img_height + 500)
 x_speed = 0
 y_speed = 2
 
+x2 = 640 - (img_width/2)
+y2 = 0 - (img_height + 500)
+x2_speed = 0
+y2_speed = 2
+
 print(img_height)
 print(img_width)
 
@@ -62,6 +67,7 @@ print(img_width)
 def move(x, y):
     screen.blit(borderBottom, (0, 0))
     screen.blit(image, (x, y))
+    screen.blit(image2, (x2, y2))
     screen.blit(borderTop, (0, 0))
     
 
@@ -88,7 +94,8 @@ while exit == False:
 
     x = 640 - (img_width/2)
 
-    
+    if y > 1200:
+        image2 = pygame.image.load(images[randint(0, 96)])
 
     if y > 2048:
         # y = 0 - img_height
