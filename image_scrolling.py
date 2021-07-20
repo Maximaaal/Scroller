@@ -88,8 +88,8 @@ while exit == False:
 
     x = 640 - (img_width/2)
 
-    if img_width > 1000:
-        img_width = img_width/300
+    if img_width > 700:
+        img_width = img_width - 300
 
     if y > 2048:
         # y = 0 - img_height
