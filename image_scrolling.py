@@ -21,6 +21,7 @@ print(images)
 
 currentImage = 0
 image = pygame.image.load(images[currentImage])
+image2 = pygame.image.load(images[randint(0, 96)])
 
 borderBottom = pygame.image.load('borderbottom.png')
 borderTop = pygame.image.load('bordertop.png')
@@ -94,7 +95,7 @@ while exit == False:
 
     x = 640 - (img_width/2)
 
-    if y > 1200:
+    if y >= 1200:
         image2 = pygame.image.load(images[randint(0, 96)])
 
     if y > 2048:
