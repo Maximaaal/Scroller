@@ -59,7 +59,7 @@ print(img_width)
 
 
 def move(x, y):
-    screen.blit(borderBottom, (0, 512))
+    screen.blit(borderBottom, (0, 0))
     screen.blit(image, (x, y))
     screen.blit(borderTop, (0, 0))
     
