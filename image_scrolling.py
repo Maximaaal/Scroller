@@ -2,6 +2,7 @@ from random import randint
 import pygame
 import sys
 
+
 exit = False
 
 SIZE = width, height = 800, 600
@@ -20,6 +21,9 @@ print(images)
 
 currentImage = 0
 image = pygame.image.load(images[currentImage])
+
+border1 = pygame.image.load('border1.png')
+border2 = pygame.image.load('border2.png')
 
 clock = pygame.time.Clock()
 img_size = image.get_rect().size
@@ -40,18 +44,36 @@ y_speed = 1
 print(img_height)
 print(img_width)
 
+# img_names = []
+# j = 0
+# while len(img_names) < 39:
+#     images.append("border/border_%d.jpg" % j)
+#     j += 1
+
+# all_imgs = []
+# for img in img_names:
+#     all_imgs[img] = pygame.image.load(img)
+
+# for img in img_names:
+#     screen.blit(all_imgs[img], (0, 0))
+
 
 def move(x, y):
     screen.blit(image, (x, y))
+    screen.blit(border1, (0, 0))
+
 
 while exit == False:
     
     
+    
     screen.fill(BG_COLOR)
-
+    
     x += x_speed
     y += y_speed
 
+    
+    
     move(x, y)
     print("y=", y)
     print("img_height=", img_height)
@@ -79,6 +101,7 @@ while exit == False:
             if event.key == pygame.K_ESCAPE:
                 pygame.quit()
                 sys.exit()
+                
                 
     pygame.display.update()
     clock.tick(60)
