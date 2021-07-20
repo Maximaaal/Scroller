@@ -96,8 +96,7 @@ while exit == False:
         image = pygame.image.load(images[currentImage])
         y = (0 - image.get_rect().height) - 100
         
-    if img_width > 700:
-        img_width = 500
+    
     # if currentImage >= 3:
     #     currentImage = 0        
     
