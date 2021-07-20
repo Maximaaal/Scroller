@@ -39,7 +39,7 @@ if fullscreen:
 x = 640 - (img_width/2)
 y = 0 - (img_height + 500)
 x_speed = 0
-y_speed = 1
+y_speed = 10
 
 print(img_height)
 print(img_width)
@@ -59,8 +59,10 @@ print(img_width)
 
 
 def move(x, y):
+    screen.blit(border2, (0, 0))
+    screen.blit(border1, (0, 512))
     screen.blit(image, (x, y))
-    screen.blit(border1, (0, 0))
+    
 
 
 while exit == False:
