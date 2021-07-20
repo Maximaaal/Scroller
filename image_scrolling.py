@@ -22,8 +22,8 @@ print(images)
 currentImage = 0
 image = pygame.image.load(images[currentImage])
 
-borderBottom = pygame.image.load('border1.png')
-borderTop = pygame.image.load('border2.png')
+borderBottom = pygame.image.load('borderbottom.png')
+borderTop = pygame.image.load('bordertop.png')
 
 clock = pygame.time.Clock()
 img_size = image.get_rect().size
@@ -61,7 +61,7 @@ print(img_width)
 def move(x, y):
     screen.blit(borderBottom, (0, 512))
     screen.blit(image, (x, y))
-    screen.blit(borderTop, (1280, 1024))
+    screen.blit(borderTop, (0, 0))
     
 
 
