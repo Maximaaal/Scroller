@@ -25,6 +25,7 @@ image = pygame.image.load(images[currentImage])
 borderBottom = pygame.image.load('borderbottom.png')
 borderTop = pygame.image.load('bordertop.png')
 
+
 clock = pygame.time.Clock()
 img_size = image.get_rect().size
 img_height = image.get_rect().height
@@ -70,13 +71,13 @@ while exit == False:
     
     
     screen.fill(BG_COLOR)
+
+    topScreenColor = (0, 255, 0)
+    pygame.draw.rect(screen, topScreenColor, (0,0,1280,1024))
     
     x += x_speed
     y += y_speed
 
-    
-    
-    
     move(x, y)
     print("y=", y)
     print("img_height=", img_height)
