@@ -97,7 +97,7 @@ while exit == False:
         y = (0 - image.get_rect().height) - 100
         
     if img_width > 700:
-        img_width = img_width - 700
+        img_width = 500
     # if currentImage >= 3:
     #     currentImage = 0        
     
