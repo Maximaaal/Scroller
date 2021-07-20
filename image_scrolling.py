@@ -25,6 +25,8 @@ image = pygame.image.load(images[currentImage])
 border1 = pygame.image.load('border1.png')
 border2 = pygame.image.load('border2.png')
 
+flags = pygame.OPENGL
+
 clock = pygame.time.Clock()
 img_size = image.get_rect().size
 img_height = image.get_rect().height
