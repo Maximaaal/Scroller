@@ -60,8 +60,8 @@ print(img_width)
 
 def move(x, y):
     screen.blit(border2, (0, 0))
-    screen.blit(border1, (0, 512))
     screen.blit(image, (x, y))
+    screen.blit(border1, (0, 512))
     
 
 
@@ -74,6 +74,7 @@ while exit == False:
     x += x_speed
     y += y_speed
 
+    
     
     
     move(x, y)
