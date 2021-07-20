@@ -32,7 +32,7 @@ img_width = image.get_rect().width
 screen = pygame.display.set_mode(SIZE)
 pygame.display.set_caption('Scroller')
 if fullscreen:
-    DISPLAYSURF = pygame.display.set_mode((1280, 2048), pygame.FULLSCREEN)
+    DISPLAYSURF = pygame.display.set_mode((1280, 2048), pygame.FULLSCREEN, vsync=1)
     pygame.mouse.set_visible(False)
 
 # x = randint(0, width)
