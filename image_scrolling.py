@@ -12,7 +12,7 @@ fullscreen = True
 images = []
 i = 0
 while len(images) < 97:
-    images.append("images/img%d.jpeg" % i)
+    images.append("images/img%d.jpg" % i)
     i += 1
 print(images)
 
@@ -20,9 +20,11 @@ print(images)
 # yPos = [-454, -1798, -1126, -1220]
 
 currentImage = 0
-image = pygame.image.load(images[currentImage])
-# image2 = pygame.image.load(images[randint(0, 96)])
+# image = pygame.image.load(images[currentImage])
+# image = pygame.image.load(images[randint(0, 96)])
+image = pygame.image.load('images/img31.jpg')
 
+# image2 = pygame.image.load(images[randint(0, 96)])
 
 
 bgNative = pygame.image.load('bg/native_background.png')
@@ -33,9 +35,6 @@ nativeBottom = pygame.image.load('bg/native-border_bottom.png')
 
 binaryTop = pygame.image.load('bg/binary-border_top.png')
 binaryBottom = pygame.image.load('bg/binary-border_bottom.png')
-
-
-
 
 
 clock = pygame.time.Clock()
@@ -61,6 +60,13 @@ y2_speed = 2
 
 print(img_height)
 print(img_width)
+
+if img_width > 900:
+    newImg_width = img_width/1.5
+    newImg_width = int(newImg_width)
+    newImg_height = img_height/1.5
+    newImg_height = int(newImg_height)
+    image = pygame.transform.scale(image, (newImg_width, newImg_height))
 
 # img_names = []
 # j = 0
@@ -91,12 +97,7 @@ def move(x, y):
     # screen.blit(image2, (x2, y2))
     
     
-    
-
-
 while exit == False:
-    
-    
     
     screen.fill(BG_COLOR)
 
@@ -123,9 +124,17 @@ while exit == False:
         # y = 0 - img_height
         currentImage = randint(0, 96)
         image = pygame.image.load(images[currentImage])
+        if img_width > 900:
+            img_width = img_width/1.5
         y = (0 - image.get_rect().height) - 100
         
     
+    if img_width > 900:
+        newImg_width = img_width/1.5
+        newImg_width = int(newImg_width)
+        newImg_height = img_height/1.5
+        newImg_height = int(newImg_height)
+        image = pygame.transform.scale(image, (newImg_width, newImg_height))
     # if currentImage >= 3:
     #     currentImage = 0        
     
