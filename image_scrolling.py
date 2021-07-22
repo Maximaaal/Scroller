@@ -22,8 +22,8 @@ image = pygame.image.load(images[randint(0, 96)])
 # borders and background
 bgNative = pygame.image.load('bg/native_background.png')
 bgBinary = pygame.image.load('bg/binary_background.png')
-nativeTop = pygame.image.load('bg/native-border_top.png')
-nativeBottom = pygame.image.load('bg/native-border_bottom.png')
+nativeTop = pygame.image.load('bg/native-border_top-min.png')
+nativeBottom = pygame.image.load('bg/native-border_bottom-min.png')
 binaryTop = pygame.image.load('bg/binary-border_top.png')
 binaryBottom = pygame.image.load('bg/binary-border_bottom.png')
 
@@ -41,9 +41,9 @@ if fullscreen:
 
 # img movement
 x = 640 - (img_width/2)
-y = 0 - img_height
+y = 0 - (img_height/2)
 x_speed = 0
-y_speed = 20
+y_speed = 3
 
 print(img_height)
 print(img_width)
@@ -61,9 +61,9 @@ def move(x, y):
     screen.blit(bgNative, (0, 0))
     screen.blit(bgBinary, (0, 1024)) 
     screen.blit(image, (x, y))
-    screen.blit(nativeTop, (0, 0))
-    screen.blit(nativeBottom, (0, 0))
-    screen.blit(binaryBottom, (0, 0))
+    # screen.blit(nativeTop, (0, 0))
+    # screen.blit(nativeBottom, (0, 0))
+    # screen.blit(binaryBottom, (0, 0))
     
 while exit == False:
     
