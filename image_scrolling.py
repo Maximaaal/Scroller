@@ -73,8 +73,8 @@ while exit == False:
     y += y_speed
 
     move(x, y)
-    print("y=", y)
-    print("img_height=", img_height)
+    # print("y=", y)
+    # print("img_height=", img_height)
 
     # get image size
     img_size = image.get_rect().size
