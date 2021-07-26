@@ -60,11 +60,11 @@ if img_width > 900:
 # blit
 def move(x, y):
     screen.blit(bgBinary, (0, 1024)) 
-    screen.blit(binaryTop, (0, 1024))
+    screen.blit(binaryBottom, (0, 2002))
     screen.blit(image, (x, y))
+    screen.blit(binaryTop, (0, 1024))
     screen.blit(nativeTop, (0, 0))
     screen.blit(nativeBottom, (0, 338))
-    screen.blit(binaryBottom, (0, 2002))
     screen.blit(bgNative, (310, 197))
 
     
@@ -72,8 +72,13 @@ while exit == False:
     
     screen.fill(BG_COLOR)
 
-    bgColor = (255, 0, 0)
-    pygame.draw.rect(DISPLAYSURF, bgColor, (0, 0, 1280, 1024))
+    BGCOLOR = (255, 0, 0)
+    pygame.draw.rect(DISPLAYSURF, BGCOLOR, (0, 0, 1280, 1024))
+
+    BLACK = (0, 0, 0)
+    WHITE = (255, 255, 255)
+    pygame.draw.rect(DISPLAYSURF, BLACK, (1280, 0, 640, 1024))
+    pygame.draw.rect(DISPLAYSURF, WHITE, (1280, 640, 640, 1024))
 
     x += x_speed
     y += y_speed
