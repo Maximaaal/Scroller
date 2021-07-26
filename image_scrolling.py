@@ -20,13 +20,12 @@ currentImage = 0
 image = pygame.image.load(images[randint(0, 96)])
 
 # borders and background
-bgNative = pygame.image.load('bg/native_background.jpg')
+bgNative = pygame.image.load('bg/binary/01_binary_bg.jpg')
 bgBinary = pygame.image.load('bg/binary_background.png')
 nativeTop = pygame.image.load('bg/native-border_top-min.png')
 nativeBottom = pygame.image.load('bg/native-border_bottom.png')
-binaryTop = pygame.image.load('bg/binary-top.png')
-binaryBottom = pygame.image.load('bg/binary-bottom.png')
-
+binaryTop = pygame.image.load('bg/binary/01_binary-bottom.png')
+binaryBottom = pygame.image.load('bg/binary/01_binary-top.png')
 
 #screen setup
 clock = pygame.time.Clock()
@@ -66,9 +65,7 @@ def move(x, y):
     screen.blit(image, (x, y))
     screen.blit(nativeTop, (0, 0))
     screen.blit(nativeBottom, (0, 338))
-    screen.blit(binaryBottom, (0, 1473))
-
-
+    screen.blit(binaryBottom, (0, 2002))
 
 
     
