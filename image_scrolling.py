@@ -21,7 +21,7 @@ image = pygame.image.load(images[randint(0, 96)])
 
 # borders and background
 bgNative = pygame.image.load('bg/binary/01_binary_bg.jpg')
-bgBinary = pygame.image.load('bg/binary_background.png')
+bgBinary = pygame.image.load('bg/binary/01_binary_bg.jpg')
 nativeTop = pygame.image.load('bg/native-border_top-min.png')
 nativeBottom = pygame.image.load('bg/native-border_bottom.png')
 binaryTop = pygame.image.load('bg/binary/01_binary-top.png')
