@@ -27,6 +27,7 @@ nativeBottom = pygame.image.load('bg/native-border_bottom.png')
 binaryTop = pygame.image.load('bg/binary-top.png')
 binaryBottom = pygame.image.load('bg/binary-bottom.png')
 
+
 #screen setup
 clock = pygame.time.Clock()
 img_size = image.get_rect().size
@@ -48,6 +49,7 @@ y_speed = 2
 print(img_height)
 print(img_width)
 
+
 # if image is too big then resize
 if img_width > 900:
     newImg_width = img_width/1.5
@@ -58,17 +60,24 @@ if img_width > 900:
 
 # blit
 def move(x, y):
-    screen.blit(bgNative, (0, 0))
+    # screen.blit(bgNative, (0, 0))
     # screen.blit(bgBinary, (0, 1024)) 
     screen.blit(binaryTop, (0, 1024))
     screen.blit(image, (x, y))
     screen.blit(nativeTop, (0, 0))
     screen.blit(nativeBottom, (0, 338))
     screen.blit(binaryBottom, (0, 1473))
+
+
+
+
     
 while exit == False:
     
     screen.fill(BG_COLOR)
+
+    bgColor = (255, 0, 0)
+    pygame.draw.rect(DISPLAYSURF, bgColor, (0, 0, 1280, 1024))
 
     x += x_speed
     y += y_speed
@@ -89,8 +98,8 @@ while exit == False:
     if y > 2048:
         currentImage = randint(0, 96)
         image = pygame.image.load(images[currentImage])
-        if img_width > 900:
-            img_width = img_width/1.5
+        # if img_width > 900:
+        #     img_width = img_width/1.5
         y = (0 - image.get_rect().height) - 100
 
     # if image is too big then resize
@@ -100,6 +109,9 @@ while exit == False:
         newImg_height = img_height/1.5
         newImg_height = int(newImg_height)
         image = pygame.transform.scale(image, (newImg_width, newImg_height))
+    
+    # todo:
+    # if image is too small then resize
 
     # esc killswitch
     for event in pygame.event.get():
