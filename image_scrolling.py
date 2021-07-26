@@ -60,7 +60,7 @@ if img_width > 900:
 # blit
 def move(x, y):
     # screen.blit(bgNative, (0, 0))
-    screen.blit(bgBinary, (0, 1024)) 
+    # screen.blit(bgBinary, (0, 1024)) 
     screen.blit(binaryTop, (0, 1024))
     screen.blit(image, (x, y))
     screen.blit(nativeTop, (0, 0))
