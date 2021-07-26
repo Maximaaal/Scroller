@@ -20,7 +20,7 @@ currentImage = 0
 image = pygame.image.load(images[randint(0, 96)])
 
 # borders and background
-bgNative = pygame.image.load('bg/alifuru.png')
+bgNative = pygame.image.load('bg/alifuru-min.png')
 bgBinary = pygame.image.load('bg/binary/01_binary_bg.jpg')
 nativeTop = pygame.image.load('bg/native-border_top-min.png')
 nativeBottom = pygame.image.load('bg/native-border_bottom.png')
@@ -59,7 +59,7 @@ if img_width > 900:
 
 # blit
 def move(x, y):
-    screen.blit(bgBinary, (0, 1024)) 
+    # screen.blit(bgBinary, (0, 1024)) 
     screen.blit(binaryBottom, (0, 2002))
     screen.blit(image, (x, y))
     screen.blit(binaryTop, (0, 1024))
