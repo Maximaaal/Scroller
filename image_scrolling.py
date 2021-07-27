@@ -17,7 +17,8 @@ while len(images) < 97:
 print(images)
 
 currentImage = 0
-image = pygame.image.load(images[randint(0, 96)])
+# image = pygame.image.load(images[randint(0, 96)])
+image = pygame.image.load('images/img0.jpg')
 
 # borders and background
 bgNative = pygame.image.load('bg/alifuru-min.png')
@@ -101,7 +102,7 @@ while exit == False:
         image = pygame.image.load(images[currentImage])
         # if img_width > 900:
         #     img_width = img_width/1.5
-        y = (0 - image.get_rect().height) - 100
+        y = (0 - image.get_rect().height)
 
     # if image is too big then resize
     if img_width > 900:
