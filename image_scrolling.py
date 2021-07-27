@@ -12,7 +12,7 @@ fullscreen = True
 images = []
 i = 0
 while len(images) < 97:
-    images.append("ihome/pi/Scroller/mages/img%d.jpg" % i)
+    images.append("home/pi/Scroller/mages/img%d.jpg" % i)
     i += 1
 print(images)
 
