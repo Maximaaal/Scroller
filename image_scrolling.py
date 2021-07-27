@@ -12,21 +12,21 @@ fullscreen = True
 images = []
 i = 0
 while len(images) < 97:
-    images.append("home/pi/Scroller/mages/img%d.jpg" % i)
+    images.append("images/img%d.jpg" % i)
     i += 1
 print(images)
 
 currentImage = 0
 # image = pygame.image.load(images[randint(0, 96)])
-image = pygame.image.load('home/pi/Scroller/images/img0.jpg')
+image = pygame.image.load('images/img0.jpg')
 
 # borders and background
-bgNative = pygame.image.load('home/pi/Scroller/bg/alifuru-min.png')
-bgBinary = pygame.image.load('home/pi/Scroller/bg/binary/01_binary_bg.jpg')
-nativeTop = pygame.image.load('home/pi/Scroller/bg/native-border_top-min.png')
-nativeBottom = pygame.image.load('home/pi/Scroller/bg/native-border_bottom.png')
-binaryTop = pygame.image.load('home/pi/Scroller/bg/binary/01_binary-top.png')
-binaryBottom = pygame.image.load('home/pi/Scroller/bg/binary/01_binary-bottom.png')
+bgNative = pygame.image.load('bg/alifuru-min.png')
+bgBinary = pygame.image.load('bg/binary/01_binary_bg.jpg')
+nativeTop = pygame.image.load('bg/native-border_top-min.png')
+nativeBottom = pygame.image.load('bg/native-border_bottom.png')
+binaryTop = pygame.image.load('bg/binary/01_binary-top.png')
+binaryBottom = pygame.image.load('bg/binary/01_binary-bottom.png')
 
 #screen setup
 clock = pygame.time.Clock()
