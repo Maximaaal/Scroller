@@ -18,7 +18,7 @@ print(images)
 
 currentImage = 0
 # image = pygame.image.load(images[randint(0, 96)])
-image = pygame.image.load('images/img0.jpg')
+image = pygame.image.load('home/pi/Scroller/images/img0.jpg')
 
 # borders and background
 bgNative = pygame.image.load('bg/alifuru-min.png')
