@@ -66,7 +66,7 @@ def move(x, y):
     screen.blit(binaryTop, (0, 1024))
     screen.blit(nativeTop, (0, 0))
     screen.blit(nativeBottom, (0, 338))
-    screen.blit(bgNative, (310, 197))
+    screen.blit(bgNative, (370, 135))
 
     
 while exit == False:
