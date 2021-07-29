@@ -61,11 +61,11 @@ if img_width > 900:
 # blit
 def move(x, y):
     # screen.blit(bgBinary, (0, 1024)) 
-    screen.blit(binaryBottom, (0, 2002))
+    screen.blit(binaryBottom, (0, 1350))
     screen.blit(image, (x, y))
-    screen.blit(binaryTop, (0, 1024))
+    screen.blit(binaryTop, (0, 900))
     screen.blit(nativeTop, (0, 0))
-    screen.blit(nativeBottom, (0, 338))
+    screen.blit(nativeBottom, (0, 450))
     screen.blit(bgNative, (370, 135))
 
     
@@ -97,7 +97,7 @@ while exit == False:
     x = 700 - (img_width/2)
 
     # after image is off screen then load next random image
-    if y > 2048:
+    if y > 1800:
         currentImage = randint(0, 96)
         image = pygame.image.load(images[currentImage])
         # if img_width > 900:
