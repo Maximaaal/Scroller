@@ -78,8 +78,8 @@ while exit == False:
 
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
-    pygame.draw.rect(DISPLAYSURF, BLACK, (0, 1024, 640, 1024))
-    pygame.draw.rect(DISPLAYSURF, WHITE, (640, 1024, 640, 1024))
+    pygame.draw.rect(DISPLAYSURF, BLACK, (0, 900, 700, 900))
+    pygame.draw.rect(DISPLAYSURF, WHITE, (700, 900, 700, 900))
 
     x += x_speed
     y += y_speed
