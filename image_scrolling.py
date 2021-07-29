@@ -94,7 +94,7 @@ while exit == False:
     img_width = image.get_rect().width
 
     # place image in middle
-    x = 640 - (img_width/2)
+    x = 700 - (img_width/2)
 
     # after image is off screen then load next random image
     if y > 2048:
