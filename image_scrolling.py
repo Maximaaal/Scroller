@@ -106,9 +106,9 @@ while exit == False:
 
     # if image is too big then resize
     if img_width > 900:
-        newImg_width = img_width/1.5
+        newImg_width = img_width/1.3
         newImg_width = int(newImg_width)
-        newImg_height = img_height/1.5
+        newImg_height = img_height/1.3
         newImg_height = int(newImg_height)
         image = pygame.transform.scale(image, (newImg_width, newImg_height))
     
