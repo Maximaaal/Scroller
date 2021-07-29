@@ -37,7 +37,7 @@ screen = pygame.display.set_mode(SIZE)
 pygame.display.set_caption('Scroller')
 
 if fullscreen:
-    DISPLAYSURF = pygame.display.set_mode((1280, 2048), pygame.FULLSCREEN)
+    DISPLAYSURF = pygame.display.set_mode((1400, 1800), pygame.FULLSCREEN)
     pygame.mouse.set_visible(False)
 
 # img movement
