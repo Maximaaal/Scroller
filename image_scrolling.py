@@ -25,8 +25,8 @@ bgNative = pygame.image.load('/home/pi/Scroller/bg/alifuru-min.png')
 bgBinary = pygame.image.load('/home/pi/Scroller/bg/binary/01_binary_bg.jpg')
 nativeTop = pygame.image.load('/home/pi/Scroller/border/native-top.png')
 nativeBottom = pygame.image.load('/home/pi/Scroller/border/native-bottom.png')
-binaryTop = pygame.image.load('/home/pi/Scroller/bg/border/binary-top.png')
-binaryBottom = pygame.image.load('/home/pi/Scroller/bg/binary/binary-bottom.png')
+binaryTop = pygame.image.load('/home/pi/Scroller/border/binary-top.png')
+binaryBottom = pygame.image.load('/home/pi/Scroller/border/binary-bottom.png')
 
 #screen setup
 clock = pygame.time.Clock()
