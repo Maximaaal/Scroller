@@ -74,7 +74,7 @@ while exit == False:
     screen.fill(BG_COLOR)
 
     BGCOLOR = (255, 0, 0)
-    pygame.draw.rect(DISPLAYSURF, BGCOLOR, (0, 0, 1280, 1024))
+    pygame.draw.rect(DISPLAYSURF, BGCOLOR, (0, 0, 1400, 900))
 
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
