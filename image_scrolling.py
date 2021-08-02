@@ -11,7 +11,7 @@ fullscreen = True
 # load random image
 images = []
 i = 0
-while len(images) < 97:
+while len(images) < 96:
     images.append("/home/pi/Scroller/images/img%d.jpg" % i)
     i += 1
 print(images)
@@ -23,10 +23,10 @@ image = pygame.image.load('/home/pi/Scroller/images/img0.jpg')
 # borders and background
 bgNative = pygame.image.load('/home/pi/Scroller/bg/alifuru-min.png')
 bgBinary = pygame.image.load('/home/pi/Scroller/bg/binary/01_binary_bg.jpg')
-nativeTop = pygame.image.load('/home/pi/Scroller/border/native-top.png')
-nativeBottom = pygame.image.load('/home/pi/Scroller/border/native-bottom.png')
-binaryTop = pygame.image.load('/home/pi/Scroller/border/binary-top.png')
-binaryBottom = pygame.image.load('/home/pi/Scroller/border/binary-bottom.png')
+nativeTop = pygame.image.load('/home/pi/Scroller/border-1024/native-top.png')
+nativeBottom = pygame.image.load('/home/pi/Scroller/border-1024/native-bottom.png')
+binaryTop = pygame.image.load('/home/pi/Scroller/border-1024/binary-top.png')
+binaryBottom = pygame.image.load('/home/pi/Scroller/border-1024/binary-bottom.png')
 
 #screen setup
 clock = pygame.time.Clock()
@@ -37,7 +37,7 @@ screen = pygame.display.set_mode(SIZE)
 pygame.display.set_caption('Scroller')
 
 if fullscreen:
-    DISPLAYSURF = pygame.display.set_mode((1400, 1800), pygame.FULLSCREEN)
+    DISPLAYSURF = pygame.display.set_mode((1280, 2048), pygame.FULLSCREEN)
     pygame.mouse.set_visible(False)
 
 # img movement
@@ -62,11 +62,11 @@ if img_width > 900:
 def move(x, y):
     # screen.blit(bgBinary, (0, 1024)) 
     screen.blit(nativeTop, (0, 0))
-    screen.blit(binaryBottom, (0, 1350))
+    screen.blit(binaryBottom, (0, 1536))
     screen.blit(image, (x, y))
-    screen.blit(binaryTop, (0, 900))
-    screen.blit(nativeBottom, (0, 450))
-    screen.blit(bgNative, (370, 135))
+    screen.blit(binaryTop, (0, 1024))
+    screen.blit(nativeBottom, (0, 512))
+    screen.blit(bgNative, (310, 197))
 
     
 while exit == False:
@@ -74,12 +74,12 @@ while exit == False:
     screen.fill(BG_COLOR)
 
     BGCOLOR = (255, 0, 0)
-    pygame.draw.rect(DISPLAYSURF, BGCOLOR, (0, 0, 1400, 900))
+    pygame.draw.rect(DISPLAYSURF, BGCOLOR, (0, 0, 1280, 1024))
 
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
-    pygame.draw.rect(DISPLAYSURF, BLACK, (0, 900, 700, 900))
-    pygame.draw.rect(DISPLAYSURF, WHITE, (700, 900, 700, 900))
+    pygame.draw.rect(DISPLAYSURF, BLACK, (0, 1024, 640, 1024))
+    pygame.draw.rect(DISPLAYSURF, WHITE, (640, 1024, 640, 1024))
 
     x += x_speed
     y += y_speed
@@ -97,7 +97,7 @@ while exit == False:
     x = 700 - (img_width/2)
 
     # after image is off screen then load next random image
-    if y > 1800:
+    if y > 2048:
         currentImage = randint(0, 96)
         image = pygame.image.load(images[currentImage])
         # if img_width > 900:
@@ -106,9 +106,9 @@ while exit == False:
 
     # if image is too big then resize
     if img_width > 900:
-        newImg_width = img_width/1.3
+        newImg_width = img_width/1.5
         newImg_width = int(newImg_width)
-        newImg_height = img_height/1.3
+        newImg_height = img_height/1.5
         newImg_height = int(newImg_height)
         image = pygame.transform.scale(image, (newImg_width, newImg_height))
     
