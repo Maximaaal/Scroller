@@ -11,22 +11,22 @@ fullscreen = True
 # load random image
 images = []
 i = 0
-while len(images) < 96:
-    images.append("/home/pi/Scroller/images/img%d.jpg" % i)
+while len(images) < 98:
+    images.append("images/img%d.jpg" % i)
     i += 1
 print(images)
 
 currentImage = 0
 # image = pygame.image.load(images[randint(0, 96)])
-image = pygame.image.load('/home/pi/Scroller/images/img0.jpg')
+image = pygame.image.load(images[currentImage])
 
 # borders and background
-bgNative = pygame.image.load('/home/pi/Scroller/bg/alifuru-min.png')
-bgBinary = pygame.image.load('/home/pi/Scroller/bg/binary/01_binary_bg.jpg')
-nativeTop = pygame.image.load('/home/pi/Scroller/border-1024/native-top.png')
-nativeBottom = pygame.image.load('/home/pi/Scroller/border-1024/native-bottom.png')
-binaryTop = pygame.image.load('/home/pi/Scroller/border-1024/binary-top.png')
-binaryBottom = pygame.image.load('/home/pi/Scroller/border-1024/binary-bottom.png')
+bgNative = pygame.image.load('bg/alifuru-min.png')
+bgBinary = pygame.image.load('bg/binary/01_binary_bg.jpg')
+nativeTop = pygame.image.load('border-1024/native-top.png')
+nativeBottom = pygame.image.load('border-1024/native-bottom.png')
+binaryTop = pygame.image.load('border-1024/binary-top.png')
+binaryBottom = pygame.image.load('border-1024/binary-bottom.png')
 
 #screen setup
 clock = pygame.time.Clock()
@@ -44,7 +44,7 @@ if fullscreen:
 x = 640 - (img_width/2)
 y = 0 - (img_height/2)
 x_speed = 0
-y_speed = 2
+y_speed = 100
 
 print(img_height)
 print(img_width)
@@ -84,6 +84,8 @@ while exit == False:
     x += x_speed
     y += y_speed
 
+    print(currentImage)
+
     move(x, y)
     # print("y=", y)
     # print("img_height=", img_height)
@@ -98,7 +100,7 @@ while exit == False:
 
     # after image is off screen then load next random image
     if y > 2048:
-        currentImage = randint(0, 96)
+        currentImage = randint(0, 97)
         image = pygame.image.load(images[currentImage])
         # if img_width > 900:
         #     img_width = img_width/1.5
