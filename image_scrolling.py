@@ -44,7 +44,7 @@ if fullscreen:
 x = 640 - (img_width/2)
 y = 0 - (img_height/2)
 x_speed = 0
-y_speed = 100
+y_speed = 2
 
 print(img_height)
 print(img_width)
